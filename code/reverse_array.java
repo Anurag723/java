@@ -1,4 +1,4 @@
-import java.util.*;
+// import java.util.*;
 
 class reverse_array{
     public static int[] rev(int[] arr){
