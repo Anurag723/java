@@ -1,4 +1,7 @@
 // import java.util.*;
+
+import java.util.Arrays;
+
 public class sort0s1s2s {
     public static void srt(int[] arr){
         int n = arr.length;
@@ -33,7 +36,9 @@ public class sort0s1s2s {
 
     public static void main(String[] args){
         int[] arr = {0,2,1,0,0,1,0,2,2,2,1,0,2};
-        srt(arr);
+        // srt(arr);
+        Arrays.sort(arr);           //higher time complexity
+        
         for(int i:arr){
             System.out.print(i+" ");
         }
