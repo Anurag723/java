@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class move_neg {
     public static void srt(int[] arr){
         int n = arr.length;
@@ -19,7 +21,8 @@ public class move_neg {
 
     public static void main(String[] main){
         int[] arr = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
-        srt(arr);
+        // srt(arr);
+        Arrays.sort(arr);               //high tc
         for (int i : arr) {
             System.out.print(i+" ");
         }
