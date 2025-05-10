@@ -1,5 +1,6 @@
 import java.util.*;
-// import java.util.concurrent.ArrayBlockingQueue;
+// import java.util.concurrent.ArrayBlockingQueue;                      /asked in tcs imp question
+
 
 public class shopkeeperproblem {
     public static void main(String[] args) {
@@ -40,5 +41,5 @@ public class shopkeeperproblem {
         }
 
         sc.close();
-    }
+    }                           
 }
