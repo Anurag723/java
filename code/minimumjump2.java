@@ -1,55 +1,32 @@
 public class minimumjump2 {
-    // Java program to count Minimum number
-// of jumps to reach end
-
-    // Returns minimum number of jumps
-    // to reach arr[n-1] from arr[0]
-    static int minJumps(int[] arr) {
+    
+    static int minJumps(int[] arr){
         int n = arr.length;
+        int res = 0;
+        int curr = 0;
+        int max = 0;
 
-        // Return -1 if not possible to jump
-        if (arr[0] == 0)
-            return -1;
-
-        // Stores the maximal reachable index
-        int maxReach = 0;
-
-        // stores the number of steps we can still take
-        int currReach = 0;
-
-        // stores the number of jumps needed 
-        // to reach current reachable index
-        int jump = 0;
-
-        // Start traversing array
-        for (int i = 0; i < n; i++) {
-            maxReach = Math.max(maxReach, i + arr[i]);
-
-            // If we can reach last index by jumping 
-            // from current position return Jump + 1
-            if (maxReach >= n - 1) {
-                return jump + 1;
-            }
-
-            // Increment the Jump as we reached the 
-            // Current Reachable index
-            if (i == currReach) {
-
-                // If Max reach is same as current index
-                // then we can not jump further
-                if (i == maxReach) {
-                    return -1;
-                }
-
-                // If Max reach > current index then increment 
-                // jump and update current reachable index 
-                else {
-                    jump++;
-                    currReach = maxReach;
-                }
-            }
+        if (arr.length<=1) {
+            return 0;
         }
 
+        if (arr[0]==0) {
+            return-1;
+        }
+
+        for(int i=0; i<n; i++){
+            max = Math.max(max,i+arr[i]);
+            if (i==curr) {
+                res++;
+                curr = max;
+            }
+            if (curr>=n-1) {
+                break;
+            }
+        }
+        if (curr>=n-1) {
+            return res;
+        }
         return -1;
     }
 
