@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+// Time complexity O(N)
 public class merge_interval{
     static List<int[]> mi(int[][] arr){
         Arrays.sort(arr , (a,b) -> Integer.compare(a[0],b[0]));
