@@ -2,7 +2,7 @@
 
 public class find_duplicate {
     public static int rmv(int[] arr) {
-        // Code Here
+        // Code Here have bugs
         if(arr.length<=1)
             return arr.length;
         int idx = 1;
