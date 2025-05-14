@@ -1,5 +1,28 @@
 public class product_except_self {
 
+
+    // Fully optimised
+    static int[] pes2(int[] arr){
+        int[] ans = new int[arr.length];
+
+        int pre = 1;
+        int suf = 1;
+        for(int i=0; i<arr.length; i++){
+            ans[i] = pre;
+            pre = pre*arr[i];
+        }
+
+        for(int i = arr.length-1; i>=0; i--){
+            ans[i] = ans[i]*suf;
+            suf = suf*arr[i];
+        }
+
+        return ans;
+    }
+
+
+
+    // Optimised Time Complexity But no space complexity
     static int[] pes1(int[] arr) {
         int[] ans = new int[arr.length];
         int[] prefix = new int[arr.length];
@@ -44,7 +67,7 @@ public class product_except_self {
     }
     public static void main(String[] args) {
         int[] arr = {10, 3, 5, 6, 2};
-        int[] arr1 = pes1(arr);
+        int[] arr1 = pes2(arr);
 
         for (int i : arr1) {
             System.err.print(i+" ");
