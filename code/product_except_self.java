@@ -1,26 +1,28 @@
 public class product_except_self {
 
     static int[] pes1(int[] arr) {
-        int n = arr.length;
+        int[] ans = new int[arr.length];
+        int[] prefix = new int[arr.length];
+        int[] suffix = new int[arr.length];
 
-        // Step 1: Create output array to store the result
-        int[] output = new int[n];
+        int pre = 1;
+        int suf = 1;
 
-        // Step 2: Fill output array with left products
-        int leftProduct = 1;
-        for (int i = 0; i < n; i++) {
-            output[i] = leftProduct; // Store product of elements to the left of i
-            leftProduct *= arr[i];   // Update left product for next index
+        for (int i = 0; i < arr.length; i++) {
+            prefix[i] = pre;
+            pre = pre * arr[i];
         }
 
-        // Step 3: Multiply with right products
-        int rightProduct = 1;
-        for (int i = n - 1; i >= 0; i--) {
-            output[i] *= rightProduct; // Multiply with product of elements to the right
-            rightProduct *= arr[i];    // Update right product for next index
+        for (int i = suffix.length-1; i>=0; i--) {
+            suffix[i] = suf;
+            suf = suf*arr[i];
         }
 
-        return output;
+        for (int i = 0; i < arr.length; i++) {
+            ans[i] = prefix[i] * suffix[i];
+        }
+
+        return ans;
     }
 
     static int[] pes(int[] arr){
