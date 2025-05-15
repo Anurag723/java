@@ -85,6 +85,10 @@ public class set_mat_zero {
         }
     }
 
+    // n the previous approach we took two arrays to store the row's and column's status. Now instead of two auxiliary arrays, we can use the first row and first column of mat[][] to store which row elements and column elements are to be marked as zeroes.
+
+    // So if the first cell of a row is set to 0, then all cells of that row should be updated with 0. Similarly, if the first cell of a column is set to 0, then all cells of that column should be updated to 0. Since cell (0, 0) is first cell of the first row as well as the first column, so maintain another variable, say c0 to store the status of the first column and cell(0, 0) will store the status of the first row.
+
     public static void main(String[] args) {
         int[][] arr = {{0,1,2,0},{3,4,0,2},{1,3,1,5}};
 
