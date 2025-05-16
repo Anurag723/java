@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+// optimal solution
+
 public class insertmerge {
     static ArrayList<int[]> insertInterval(int[][] intervals, int[] newInterval) {
         // code here
