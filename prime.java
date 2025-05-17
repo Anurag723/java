@@ -10,10 +10,21 @@ public class prime {
         }
         return true;
     }
+
+    static List<Integer> allprime(int num){
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 1; i <= num; i++){
+            if (isprime(i)) {
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         sc.close();
         System.out.println(isprime(num));
+        System.out.println(allprime(num));
     }
 }
