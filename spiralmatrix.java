@@ -1,5 +1,8 @@
 import java.util.*;
 
+
+// optimal and only solution may use while insted of for rest same
+
 public class spiralmatrix {
     static List<Integer> spiral(int[][] arr){
         int top = 0;
