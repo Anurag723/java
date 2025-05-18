@@ -1,5 +1,25 @@
+import java.util.HashSet;
+
 public class three_sum {
 
+    // space complexity O(n) still better
+    static boolean triplet1(int[] arr, int target){
+        int n = arr.length;
+
+        for (int i = 0; i < n-2; i++) {
+            HashSet<Integer> st = new HashSet<>();
+            for (int j = i+1; j < n; j++) {
+                int second = target - arr[j] - arr[i];
+
+                if (st.contains(second)) {
+                    return true;
+                }
+
+                st.add(arr[j]);
+            }
+        }
+        return false;
+    }
 
     // Brute Force
     static boolean triplet(int[] arr, int target){
@@ -21,5 +41,6 @@ public class three_sum {
         int target = 13;
 
         System.out.println(triplet(arr, target));
+        System.out.println(triplet1(arr, target));
     }
 }
