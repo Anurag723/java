@@ -1,6 +1,34 @@
-import java.util.HashSet;
+import java.util.*;
 
 public class three_sum {
+
+    // optimal
+    static boolean hasTripletSum(int[] arr, int target) {
+        int n = arr.length;
+        Arrays.sort(arr);
+        
+        // Fix the first element as arr[i]
+        for (int i = 0; i < n - 2; i++) {
+            
+            // Initialize left and right pointers with 
+            // start and end of remaining subarray
+            int l = i + 1, r = n - 1;
+            
+            int requiredSum = target - arr[i];
+            while (l < r) {
+                if (arr[l] + arr[r] == requiredSum)
+                    return true;
+                if (arr[l] + arr[r] < requiredSum)
+                    l++;
+                else if (arr[l] + arr[r] > requiredSum)
+                    r--;
+            }
+        }
+
+        // If we reach here, then no triplet was found
+        return false;
+    }
+
 
     // space complexity O(n) still better
     static boolean triplet1(int[] arr, int target){
@@ -42,5 +70,6 @@ public class three_sum {
 
         System.out.println(triplet(arr, target));
         System.out.println(triplet1(arr, target));
+        System.out.println(hasTripletSum(arr, target));
     }
 }
