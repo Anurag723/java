@@ -2,6 +2,34 @@ import java.util.*;
 
 public class twosum{
 
+    // two sum two pointer approach
+    static int[] tstp(int[] arr, int target){
+
+        int left = 0;
+        int right = arr.length-1;
+
+
+        int[] ans = new int[2];
+
+        while (left<right) {
+            if (arr[left]+arr[right] == target) {
+                ans[0] = arr[left];
+                ans[1] = arr[right];
+                return ans;
+            }
+
+            else if (arr[left]+arr[right] < target) {
+                left++;
+            }
+
+            else if (arr[left]+arr[right] > target) {
+                right--;
+            }
+        }
+
+        return new int[]{-1, -1};
+    }
+
     // tc = O(NlogN)
 
 
@@ -51,7 +79,7 @@ public class twosum{
         int target = 14;
         Arrays.sort(arr);
 
-        int[] res = ts1(arr, target);
+        int[] res = tstp(arr, target);
 
         for (int i : res) {
             System.out.print(i+" ");
