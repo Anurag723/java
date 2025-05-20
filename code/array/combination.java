@@ -2,8 +2,7 @@ import java.util.*;
 
 class combination{
 
-    // Function to generate all combinations
-    // of arr that sums to target.
+    
     static void makeCombination(int[] arr, int remSum, ArrayList<Integer> cur, 
                                        ArrayList<ArrayList<Integer>> res, int index) {
         
@@ -13,7 +12,7 @@ class combination{
             return;
         }
 
-        // Invalid Case: If remSum is less than 0 or if index >= arr.length
+        
         if (remSum < 0 || index >= arr.length)
             return;
         
