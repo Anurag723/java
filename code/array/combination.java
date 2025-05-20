@@ -16,16 +16,16 @@ class combination{
         if (remSum < 0 || index >= arr.length)
             return;
         
-        // Add the current element to the combination
+    
         cur.add(arr[index]);
 
-        // Recur with the same index
+
         makeCombination(arr, remSum - arr[index], cur, res, index);
 
-        // Remove the current element from the combination
+
         cur.remove(cur.size() - 1);
 
-        // Recur with the next index
+
         makeCombination(arr, remSum, cur, res, index + 1);
     }
 
