@@ -29,15 +29,15 @@ class combination{
         makeCombination(arr, remSum, cur, res, index + 1);
     }
 
-    // Function to find all combinations of elements
-    // in array arr that sum to target.
+
+
     static ArrayList<ArrayList<Integer>> combinationSum(int[] arr, int target) {
       	Arrays.sort(arr);
 
-        // List to store combinations
+
         ArrayList<Integer> cur = new ArrayList<>();
 
-        // List to store valid combinations
+
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         makeCombination(arr, target, cur, res, 0);
 
