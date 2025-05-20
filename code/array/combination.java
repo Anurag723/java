@@ -3,10 +3,9 @@ import java.util.*;
 class combination{
 
     
-    static void makeCombination(int[] arr, int remSum, ArrayList<Integer> cur, 
-                                       ArrayList<ArrayList<Integer>> res, int index) {
+    static void makeCombination(int[] arr, int remSum, ArrayList<Integer> cur, ArrayList<ArrayList<Integer>> res, int index) {
         
-        // If remSum is 0 then add the combination to the result
+
         if (remSum == 0) {
             res.add(new ArrayList<>(cur));
             return;
