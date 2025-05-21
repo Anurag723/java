@@ -1,4 +1,4 @@
-package code.array.sorting;
+package sorting;
 
 public class LinearSearch {
 
