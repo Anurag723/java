@@ -8,8 +8,8 @@ class perfectsqroot{
         if (num == 0 || num == 1) return num;
 
 
-        int si = 1;
-        int end = num/2;
+        int si = 0;
+        int end = num;
 
         while (si<=end) {
             int mid = si+(end-si)/2;
