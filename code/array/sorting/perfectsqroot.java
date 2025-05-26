@@ -19,10 +19,10 @@ class perfectsqroot{
                 return mid;
             }
             else if (square<num) {
-                si++;
+                si = mid+1;
             }
             else{
-                end--;
+                end=mid-1;
             }
         }
         return -1;
