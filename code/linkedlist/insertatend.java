@@ -1,3 +1,5 @@
+package code.linkedlist;
+
 public class insertatend {
     private ll head;
 
@@ -38,6 +40,29 @@ public class insertatend {
         curr.next = vl;
     }
 
+    public void insertat(int val, int pos){
+        ll nn = new ll(val);
+        
+        if (pos==0) {
+            nn.next = head;
+            head = nn;
+        }
+
+        else{
+            ll prev = head;
+            int count = 1;
+
+            while (count<pos-1) {
+                prev = prev.next;
+                count++;
+            }
+
+            ll curr = prev.next;
+            nn.next = curr;
+            prev.next = nn;
+        }
+    }
+
     public static void main(String[] args) {
         insertatend ibl = new insertatend();
         ibl.head = new ll(10);
@@ -48,6 +73,7 @@ public class insertatend {
         second.next = third;
 
         ibl.insertend(8);
+        ibl.insertat(20, 5);
         ibl.print();
     }
 }
