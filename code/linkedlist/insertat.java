@@ -32,7 +32,7 @@ class insertat {
         }
 
         else{
-            node prev = null;
+            node prev = head;
             int count = 1;
 
             while (count<pos-1) {
