@@ -33,7 +33,7 @@ class deletebeg {
 
         node temp = head;
         head = head.next;
-        temp = null;
+        temp.next = null;
 
         return temp;
     }
