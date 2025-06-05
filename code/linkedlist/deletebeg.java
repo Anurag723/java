@@ -26,6 +26,19 @@ class deletebeg {
     }
 
 
+    public node dltbg(){
+        if (head==null) {
+            return null;
+        }
+
+        node temp = head;
+        head = head.next;
+        temp = null;
+
+        return temp;
+    }
+
+
     public void insertat(int val, int pos){
 
         node newnode = new node(val);
