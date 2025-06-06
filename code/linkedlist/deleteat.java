@@ -80,13 +80,40 @@ class deleteat{
         return temp;
     }
 
-    // public node delend(){
-    //     if (head == null || head.next==null) {
-    //         return head;
-    //     }
+    public node delend(){
+        if (head == null || head.next==null) {
+            return head;
+        }
 
+        node prev = null;
+        node curr = head;
 
-    // }
+        while (curr.next!=null) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        prev.next = null;
+        return curr;
+    }
+
+    public void delat(int pos){
+        if(pos==1){
+            head = head.next;
+        }
+
+        else{
+            node prev = head;
+            int count = 1;
+
+            while (count<pos-1) {
+                prev = prev.next;
+                count++;
+            }
+            node curr = prev.next;
+            prev.next = curr.next;
+        }
+    }
 
     public static void main(String[] args) {
         deleteat dla = new deleteat();
