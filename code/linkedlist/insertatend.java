@@ -1,5 +1,3 @@
-package code.linkedlist;
-
 public class insertatend {
     private ll head;
 
