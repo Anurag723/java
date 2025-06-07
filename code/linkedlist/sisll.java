@@ -74,12 +74,14 @@ public class sisll {
         }
 
         node curr = head;
+        node res = null;
         while (curr.next!=null) {
+            res = curr;
             curr = curr.next;
         }
+        res.next = null;
 
-        node temp = curr.next;
-        return temp;
+        return curr;
     }
 
     public void delat(int pos){
@@ -96,7 +98,7 @@ public class sisll {
             }
 
             node curr = prev.next;
-            prev.next = curr;
+            prev.next = curr.next;
         }
     }
 
