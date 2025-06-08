@@ -11,6 +11,74 @@ class midel{
         }
     }
 
+    public void insertbg(int val){
+        node nn = new node(val);
+        nn.next = head;
+        head = nn;
+    }
+
+    public void insertend(int val){
+        node nn = new node(val);
+        node curr = head;
+        while (curr!= null) {
+            curr = curr.next;
+        }
+
+        curr.next = nn;
+    }
+
+    public void insertat(int val, int pos){
+        node nn = new node(val);
+        
+        if (pos==1) {
+            nn.next = head;
+            head = nn;
+        }
+
+        else{
+            node prev = head;
+            int count = 1;
+
+            while (count<pos-1) {
+                prev = prev.next;
+            }
+
+            node curr = prev.next;
+            nn.next = curr;
+            prev.next = nn;
+        }
+    }
+
+    public node deletebg(){
+        if (head==null || head.next===null) {
+            return head;
+        }
+
+        node temp = head;
+        head = head.next;
+        temp.next = null;
+
+        return temp;
+    }
+    public node deleteen(){
+        if (head== null|| head.next==null) {
+            return head;
+        }
+
+        node pt = head;
+        node cu = null;
+
+        while (pt.next!=null) {
+            cu = pt;
+            pt = pt.next;
+        }
+
+       
+        cu.next = null;
+        return pt;
+    }
+
+
     public void print(node head){
         node curr = head;
 
@@ -25,7 +93,7 @@ class midel{
         node sec = head;
         node first = head;
 
-        while (first.next!=null) {
+        while (first != null && first.next!=null) {
             sec = sec.next;
             first = first.next.next;
         }
