@@ -50,7 +50,7 @@ class midel{
     }
 
     public node deletebg(){
-        if (head==null || head.next===null) {
+        if (head==null || head.next==null) {
             return head;
         }
 
@@ -114,6 +114,7 @@ class midel{
         fou.next = fi;
 
         int rev = dla.mid(dla.head);
+        dla.deleteen();
         dla.print(dla.head);
         System.out.println(rev);
     }
