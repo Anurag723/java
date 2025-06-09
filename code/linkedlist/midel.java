@@ -78,6 +78,41 @@ class midel{
         return pt;
     }
 
+    public void deleteat(int pos){
+        if (pos==1) {
+            head = head.next;
+        }
+
+        else{
+            node pre = head;
+            int count = 1;
+
+            while (count<pos-1) {
+                pre = pre.next;
+                count++;
+            }
+
+            node curr = pre.next;
+            pre.next = curr.next;
+        }
+    }
+
+
+    public node rev(node head){
+        node curr = head;
+        node pre = null;
+        node next = null;
+
+        while (curr!=null) {
+            next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+        }
+
+        return pre;
+    }
+
 
     public void print(node head){
         node curr = head;
@@ -117,5 +152,6 @@ class midel{
         dla.deleteen();
         dla.print(dla.head);
         System.out.println(rev);
+        dla.print(dla.rev(dla.head));
     }
 }
