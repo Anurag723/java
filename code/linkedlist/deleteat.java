@@ -110,8 +110,10 @@ class deleteat{
                 prev = prev.next;
                 count++;
             }
-            node curr = prev.next;
-            prev.next = curr.next;
+            // node curr = prev.next;
+            // prev.next = curr.next;
+
+            prev.next = prev.next.next;
         }
     }
 
@@ -125,7 +127,7 @@ class deleteat{
         dla.head.next = sec;
         sec.next = thi;
         thi.next = fou;
-        
+
         dla.print();
     }
 }
