@@ -1,6 +1,3 @@
-package code.linkedlist;
-
-
 public class deleteend {
     private node head;
 
