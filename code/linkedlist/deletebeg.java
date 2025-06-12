@@ -1,6 +1,4 @@
-package code.linkedlist;
-
-import java.util.*;
+// import java.util.*;
 
 class deletebeg {
 

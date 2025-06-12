@@ -61,7 +61,53 @@ public class sort2singlyll{
         pre.next = nn;
     }
 
-    
+    public node delbg(){
+        
+        if (head==null || head.next==null) {
+            return head;
+        }
+
+        node temp = head;
+        head = head.next;
+        temp.next = null;
+
+        return temp;
+    }
+
+    public node delend(){
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        node pre = null;
+        node curr = head;
+
+        while (curr.next != null) {
+            pre = curr;
+            curr = curr.next;
+        }
+
+        pre.next = null;
+        return curr;
+    }
+
+    public void delat(int pos){
+        if (pos==1) {
+            head = head.next;
+        }
+
+        else{
+            node pre = head;
+            int count = 1;
+
+            while (count<pos-1) {
+                pre = pre.next;
+                count++;
+            }
+
+            pre.next = pre.next.next;
+        }
+    }
 
     public static node merge(node a,node b){
         node dummy = new node(0);
