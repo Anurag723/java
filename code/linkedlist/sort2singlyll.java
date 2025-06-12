@@ -21,6 +21,48 @@ public class sort2singlyll{
         System.out.println("null");
     }
 
+    public void insert(int val){
+
+        node nn = new node(val);
+        nn.next = head;
+        head = nn;
+    }
+
+    public void insend(int val){
+        node nn = new node(val);
+
+        if(head==null){
+            head = nn;
+        }
+
+        node curr = head;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = nn;
+    }
+
+    public void insat(int val, int pos){
+        node nn = new node(val);
+        if (pos==1) {
+            nn.next = head;
+        }
+
+        node pre = head;
+        int count = 1;
+
+        while (count < pos-1) {
+            pre = pre.next;
+            count++;
+        }
+
+        node curr = pre.next;
+        nn.next = curr;
+        pre.next = nn;
+    }
+
+    
+
     public static node merge(node a,node b){
         node dummy = new node(0);
         node tail = dummy;
