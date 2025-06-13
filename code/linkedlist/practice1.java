@@ -127,4 +127,127 @@ public class practice1 {
         return pre;
     }
 
+    public static node mergesorted(node a, node b){
+        node dummy = new node(0);
+        node tail = dummy;
+
+        while (a != null && b != null) {
+            if (a.data <= b.data) {
+                tail.next = a;
+                a = a.next;
+            }
+            else{
+                tail.next = b;
+                b = b.next;
+            }
+            tail = tail.next;
+        }
+
+        if (a==null) {
+            tail.next = b;
+        }
+        
+        else{
+            tail.next = a;
+        }
+
+        return dummy.next;
+    }
+
+    public static node sum(node a, node b){
+        node dummy = new node(0);
+        node tail = dummy;
+        int carry = 0;
+
+        while (a != null || b != null) {
+            int x = (a!=null)?a.data:0;
+            int y = (b!=null)?b.data:0;
+            int sum = x+y+carry;
+
+            carry = sum/10;
+
+            tail.next = new node(sum%10);
+            tail = tail.next;
+
+            if (a != null) {
+                a = a.next;
+            }
+
+            if (b != null) {
+                b = b.next;
+            }
+        }
+
+        if (carry>0) {
+            tail.next = new node(carry);
+        }
+
+        return dummy.next;
+    }
+
+    public boolean detloop(){
+        node fast = head;
+        node slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast==slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void rmloop(){
+        node fast = head;
+        node slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                remove(slow);
+                return;
+            }
+        }
+    }
+
+    public void remove(node slow){
+        node temp = head;
+
+        while (slow.next != temp.next) {
+            temp = temp.next;
+            slow = slow.next;
+        }
+
+        slow.next = null;
+    }
+
+    public static void main(String[] args) {
+        practice1 dla1 = new practice1();
+        dla1.head = new node(2);
+        node sec = new node(4);
+        node thi = new node(6);
+        node fou = new node(8);
+
+        practice1 dla2 = new practice1();
+        dla2.head = new node(3);
+        node se = new node(5);
+        node th = new node(7);
+
+        dla1.head.next = sec;
+        sec.next = thi;
+        thi.next = fou;
+
+        dla2.head.next = se;
+        se.next = th;
+
+        practice1 res = new practice1();
+        res.head = mergesorted(dla1.head, dla2.head);
+
+        res.print();
+    }
 }
