@@ -22,7 +22,7 @@ public class addtwosortll {
         System.out.println("null");
     }
 
-    public node findsum(node a, node b){
+    public static node findsum(node a, node b){
         node dummy = new node(0);
         node tail = dummy;
 
@@ -49,7 +49,36 @@ public class addtwosortll {
         return dummy.next;
     }
 
+    public void insertend(int x){
+        node vl = new node(x);
+
+        if (head == null) {
+            head = vl;
+            return;
+        }
+
+        node curr = head;
+
+        while (curr.next!= null) {
+            curr = curr.next;
+        }
+        curr.next = vl;
+    }
+
     public static void main(String[] args) {
-        
+        addtwosortll sll1 = new addtwosortll();
+        sll1.insertend(1);
+        sll1.insertend(4);
+        sll1.insertend(8);
+
+        addtwosortll sll2 = new addtwosortll();
+        sll2.insertend(3);
+        sll2.insertend(5);
+        sll2.insertend(1);
+
+        addtwosortll res = new addtwosortll();
+        res.head = findsum(sll1.head, sll2.head);
+
+        res.print();
     }
 }
