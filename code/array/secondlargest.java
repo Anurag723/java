@@ -6,7 +6,7 @@ class secondlargest{
 
         Arrays.sort(arr);
 
-        System.out.println("arr[arr.length-2]");
+        System.out.println(arr[arr.length-2]);
     }
 
 }
