@@ -1,7 +1,5 @@
 // code to create linked list part1(creation)
 
-package code.linkedlist;
-
 public class ll1 {
 
     private ListNode head;
