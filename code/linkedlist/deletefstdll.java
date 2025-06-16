@@ -74,6 +74,17 @@ class deletefstdll{
         return temp;
     }
 
+    public void print(){
+        node nn = head;
+
+        while (nn!=null) {
+            System.out.print(nn.data+"->");
+            nn = nn.next;
+        }
+
+        System.out.println("null");
+    }
+
 
     public static void main(String[] args) {
         deletefstdll dll = new deletefstdll();
@@ -84,5 +95,6 @@ class deletefstdll{
         dll.insert(20);
 
         dll.delfst();
+        dll.print();
     }
 }
