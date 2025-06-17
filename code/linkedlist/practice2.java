@@ -7,8 +7,8 @@ class practice2{
 
     private static class node{
         private int data;
-        private int prev;
-        private int next;
+        private node prev;
+        private node next;
 
         public node(int data){
             this.data = data;
@@ -24,5 +24,23 @@ class practice2{
     public boolean isEmpty(){
         return length==0;
     }
+
+    //insert in dll
+
+    public void insert(int data){
+        node nn = new node(data);
+
+        if (isEmpty()) {
+            head = nn;
+        }
+
+        else{
+            tail.next = nn;
+        }
+        nn.prev = tail;
+        tail = nn;
+        length++;
+    }
+
     
 }
