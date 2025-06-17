@@ -42,5 +42,41 @@ class practice2{
         length++;
     }
 
-    
+    //insert at beginning
+    public void insbg(int val){
+        node nn = new node(val);
+
+        if (isEmpty()) {
+            tail = nn;
+        }
+
+        else{
+            head.prev = nn;
+        }
+        nn.next = head;
+        head = nn;
+        length++;
+    }
+
+    public void print(){
+        node nn = head;
+
+        while (nn!=null) {
+            System.out.print(nn.data+"->");
+            nn = nn.next;
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        practice2 dll = new practice2();
+        
+        dll.insbg(12);
+        dll.insbg(14);
+        dll.insbg(16);
+        dll.insbg(18);
+        dll.insbg(20);
+
+        dll.print();
+    }
 }
