@@ -1,5 +1,8 @@
 // Revision work
 //create a doubly linked list
+
+import java.util.NoSuchElementException;
+
 class practice2{
     private node head;
     private node tail;
@@ -56,6 +59,49 @@ class practice2{
         nn.next = head;
         head = nn;
         length++;
+    }
+
+    // delete in dll
+
+    public node delbg(){
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        
+        node temp = head;
+        if (head == tail) {
+            tail = null;
+        }
+
+        else{
+            head.next.prev = null;
+        }
+        head = head.next;
+        temp.next = null;
+        length--;
+
+        return temp;
+    }
+
+    public node delend(){
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        node temp = tail;
+
+        if (head == tail) {
+            head = null;
+        }
+        else{
+            tail.prev.next = null;
+        }
+
+        tail = tail.prev;
+        temp.prev = null;
+        length--;
+
+        return temp;
     }
 
     public void print(){
