@@ -1,4 +1,4 @@
-public class insertcll {
+public class insertbg {
 
     private node last;
     private int length;
@@ -13,7 +13,7 @@ public class insertcll {
         }
     }
 
-    public insertcll(){
+    public insertbg(){
         this.last = null;
         this.length = 0;
     }
@@ -43,10 +43,39 @@ public class insertcll {
         last = fiv;
     }
 
+    public void print(){
+        node nn = last.next;
+
+        while (nn != last) {
+            System.out.print(nn.data+"->");
+            nn = nn.next;
+        }
+        System.out.println(nn.data);
+    }
+
+    public void inbg(int data){
+        node nn = new node(data);
+
+        if (last==null) {
+            last = nn;
+            last.next = last;
+        }
+
+        else{
+            nn.next = last.next;
+        }
+
+        last.next = nn;
+        length++;
+    }
+
     public static void main(String[] args) {
         
-        insertcll cll = new insertcll();
+        insertbg cll = new insertbg();
         cll.createcll();
         System.out.println(cll.length);
+        cll.inbg(10);
+
+        cll.print();
     }
 }
