@@ -39,7 +39,24 @@ class using_linkedlist{
         length++;
         return res;
     }
+
+    public int peek(){
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+
+        return top.data;
+    }
     public static void main(String[] args) {
-        
+        using_linkedlist stack = new using_linkedlist();
+        stack.push(10);
+        stack.push(15);
+        stack.push(20);
+
+        System.out.println(stack.peek());
+        stack.pop();
+        System.out.println(stack.peek());
+        stack.pop();
+        System.out.println(stack.peek());
     }
 }
