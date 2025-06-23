@@ -124,3 +124,112 @@ public class practice3 {
         }
     }
 }
+
+
+class doubll{
+    private node head;
+    private node tail;
+    private int length;
+
+    private static class node{
+        private int data;
+        private node next;
+        private node prev;
+
+        public node(int data){
+            this.data = data;
+        }
+    }
+    public doubll(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    public boolean isEmpty(){
+        return length == 0;
+    }
+
+    public void insbg(int data){
+        node nn = new node(data);
+
+        if (isEmpty()) {
+            tail = nn;
+        }
+
+        else{
+            head.prev = nn;
+        }
+        nn.next = head;
+        head = nn;
+        length++;
+    }
+
+    public void insend(int val){
+        node nn = new node(val);
+
+        if (isEmpty()) {
+            head = nn;
+        }
+
+        else{
+            tail.next = nn;
+        }
+
+        nn.prev = tail;
+        tail = nn;
+        length++;
+    }
+
+    public node delfstdll(){
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        node temp = head;
+
+        if (head == tail) {
+            tail = null;
+        }
+
+        else{
+            head.next.prev = null;
+        }
+        head = head.next;
+        temp.next = null;
+        length--;
+
+        return temp;
+    }
+
+    public node delend(){
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        node temp = tail;
+
+        if (head == tail) {
+            head = null;
+        }
+
+        else{
+            tail.prev.next = null;
+        }
+        tail = tail.prev;
+        temp.prev = null;
+        length--;
+
+        return temp;
+    }
+
+    public void print(){
+        node nn = head;
+
+        while (nn != null) {
+            System.out.print(nn.data);
+            nn = nn.next;
+        }
+        System.out.println("null");
+    }
+}
