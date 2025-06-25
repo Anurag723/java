@@ -6,7 +6,7 @@ public class generics3 {
         int res = -1;
 
         for(int i=0; i<arr1.length; i++){
-            if (arr1[i] == targeT) {
+            if (arr1[i].equals(targeT)) {
                 res= i;
             }
         }
