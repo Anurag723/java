@@ -36,7 +36,7 @@ class using_linkedlist{
         }
         int res = top.data;
         top = top.next;
-        length++;
+        length--;
         return res;
     }
 
