@@ -1,7 +1,8 @@
 package code.queue;
 
-public class enqueue {
-    
+import java.util.NoSuchElementException;
+
+public class dequeue {
     private node front;
     private node rear;
     private int length;
@@ -10,47 +11,61 @@ public class enqueue {
         private int data;
         private node next;
 
-        public node(int data){
-            this.data = data;
-            this.next = null;
+        public node(int val){
+            this.data = val;
         }
     }
 
-    public enqueue(){
+    public dequeue(){
         this.front = null;
         this.rear = null;
         this.length = 0;
-    }
-
-    public int length(){
-        return length;
     }
 
     public boolean isEmpty(){
         return length == 0;
     }
 
+    public int length(){
+        return length;
+    }
+
     public void enq(int data){
         node nn = new node(data);
-        
-        if (isEmpty()) {
+
+        if(isEmpty()){
             front = nn;
         }
 
         else{
             rear.next = nn;
         }
-
         rear = nn;
         length++;
     }
 
-    public void printqueue(){
+    public int deq(){
+        if (isEmpty()) {
+            throw new NoSuchElementException("Queue is already empty");
+        }
+
+        int res = front.data;
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+
+        length--;
+        return res;
+    }
+
+    public void print(){
+        node curr = front;
+        
         if (isEmpty()) {
             return;
         }
-
-        node curr = front;
 
         while (curr != null) {
             System.out.print(curr.data+"->");
@@ -60,13 +75,17 @@ public class enqueue {
     }
 
     public static void main(String[] args) {
-        enqueue queue = new enqueue();
+        dequeue queue = new dequeue();
 
         queue.enq(12);
         queue.enq(14);
         queue.enq(16);
         queue.enq(18);
 
-        queue.printqueue();
+        queue.print();
+
+        queue.deq();
+
+        queue.print();
     }
 }

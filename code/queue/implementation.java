@@ -16,6 +16,12 @@ public class implementation {
             this.next = null;
         }
     }
+    
+    public implementation(){
+        this.front = null;
+        this.rear = null;
+        this.length = 0;
+    }
 
     public int length(){
         return length;
