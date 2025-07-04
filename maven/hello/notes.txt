@@ -1,5 +1,3 @@
-Absolutely! Here's a full beginner-friendly breakdown of what you've done so far in your Maven Hello World Java project, along with some easy-to-understand notes. Perfect for future reference or revision 👇
-
 ---
 
 ## 🧱 What You Did: Overview
