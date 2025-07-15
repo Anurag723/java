@@ -14,24 +14,24 @@ public class spiralmatrix {
 
         while (top<=bottom && left<=right) {
             for (int i = left; i <= right; i++) {
-            ans.add(arr[top][i]);
-        }
-        top++;
+                ans.add(arr[top][i]);
+            }
+            top++;
 
-        for (int i = top; i <= bottom; i++) {
-            ans.add(arr[i][right]);
-        }
-        right--;
+            for (int i = top; i <= bottom; i++) {
+                ans.add(arr[i][right]);
+            }
+            right--;
 
-        for(int i=right; i>=left; i--){
-            ans.add(arr[bottom][i]);
-        }
-        bottom--;
+            for(int i=right; i>=left; i--){
+                ans.add(arr[bottom][i]);
+            }
+            bottom--;
 
-        for (int i = bottom; i >=top; i--) {
-            ans.add(arr[i][left]);
-        }
-        left++;
+            for (int i = bottom; i >=top; i--) {
+                ans.add(arr[i][left]);
+            }
+            left++;
         }
 
         return ans;
