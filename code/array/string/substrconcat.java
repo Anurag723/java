@@ -1,3 +1,5 @@
+package string;
+
 import java.util.*;
 
 class substrconcat{
@@ -54,5 +56,17 @@ class substrconcat{
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        substrconcat sc = new substrconcat();
+
+        // Example input
+        String s = "barfoofoobarthefoobarman";
+        String[] words = {"bar", "foo", "the"};
+
+        List<Integer> result = sc.findSubstring(s, words);
+
+        System.out.println("Starting indices: " + result);
     }
 }
