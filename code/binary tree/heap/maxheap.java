@@ -1,5 +1,3 @@
-package heap;
-
 public class maxheap {
 
     Integer[] mahp;

@@ -1,5 +1,3 @@
-package heap;
-
 public class bottomupheapify {
     Integer[] mxheap;
     int n = 0;

@@ -1,5 +1,3 @@
-package heap;
-
 public class insertmxheap {
     Integer[] mxheap;
     int n;
