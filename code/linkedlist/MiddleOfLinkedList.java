@@ -1,3 +1,7 @@
+package code.linkedlist;
+
+
+
 public class MiddleOfLinkedList {
 
     // Definition for singly-linked list
