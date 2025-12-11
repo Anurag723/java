@@ -1,6 +1,37 @@
 import java.util.Stack;
 
 class SimplifyPath{
+    // Using Pointer   
+    public String simplifyPathPointer(String path) {
+        String[] parts = path.split("/");
+        String[] dirs = new String[parts.length];  // stores valid directories
+        int idx = 0;  // pointer to current directory count
+        
+        for (String part : parts) {
+            if (part.equals("") || part.equals(".")) {
+                // ignore empty or current directory
+                continue;
+            } else if (part.equals("..")) {
+                // go up one directory if possible
+                if (idx > 0) {
+                    idx--;
+                }
+            } else {
+                // add a valid directory name
+                dirs[idx++] = part;
+            }
+        }
+        
+        // Build the final simplified path
+        if (idx == 0) return "/";
+        
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < idx; i++) {
+            sb.append("/").append(dirs[i]);
+        }
+        
+        return sb.toString();
+    }
     public static String simplifyPath(String path){
         String[] parts = path.split("/");
         Stack<String> stc = new Stack<>();
