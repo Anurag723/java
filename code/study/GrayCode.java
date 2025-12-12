@@ -3,6 +3,15 @@ import java.util.List;
 
 public class GrayCode {
 
+    public List<Integer> grayCode1(int n) {             //Optimal
+        int size = 1 << n;
+        List<Integer> res = new java.util.AbstractList<>() {
+            public Integer get(int i) { return i ^ (i >> 1); }
+            public int size() { return size; }
+        };
+        return res;
+    }
+
     public List<Integer> grayCode(int n) {
         List<Integer> result = new ArrayList<>();
         int size = 1 << n;  // 2^n
